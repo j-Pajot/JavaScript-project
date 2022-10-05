@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+  background: white;
+}
+/* -------------------------------- Navbar -------------------------------------- */
+nav {
+  width: 100%;
+  background: #c06891;
+  box-shadow: 0 0 3px rgb(14, 8, 8);
+  /* position: fixed; */
+  z-index: 1000;
+  height: 90px;
+  transition: 0.2s ease;
+  color: white;
+}
+.nav-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+}
+.nav-elements h2:hover {
+  color: rgba(252, 215, 5, 0.651);
+}
+.nav-elements a {
+  text-decoration: none;
+}
+.nav-elements a:visited {
+  color: white;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.nav-links li {
+  padding: 10px;
+  transition: all 0.2s ease;
+}
+
+.nav-links li:hover {
+  transform: translateX(5px);
+  font-weight: bold;
+  color: rgba(252, 215, 5, 0.651);
+}
+
+/* --------------------------------- text anim ------------------------------ */
+.text-anim{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20% 0 20%;
+}
+#message {
+    display: flex;
+    margin-left: 1rem;
+    position: relative;
+    color: rgba(209, 66, 90, 0.411);
+}
+#message::after {
+    content: "";
+    position: absolute;
+    height: 2rem;
+    width: 4px;
+    background: black;
+    top: 0;
+    transform: translateY(-4px);
+    right: -5px;
+    animation: anim 0.8s linear infinite;
+}
+@keyframes anim {
+50% {
+ opacity: 0.1;
+}
+100% {
+  opacity: 1;
+}
+}
+/* ----------------------------------présentation --------------------------------*/
+.presentation {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10%;
+}
+/* ----------------------------------password-maker --------------------------------*/
+#password-title {
+    margin-bottom: 6%;
+}
+.password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+.password-maker {
+    background: #c06891;
+    margin: 0 10px;
+    padding: 24px 10px 10px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 3px 4px 10px 0px #a76666c2;
+  }
+  #password-output {
+    text-align: center;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  .range-container {
+    margin: 20px 0;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 160px;
+    background-image: linear-gradient(120deg, #fffffd 0%, #dbe920 100%);
+    border-radius: 50px;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Obselète chez certain navigateur */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8px;
+    height: 40px;
+    background: black;
+    background-blend-mode: multiply, multiply;
+    border-radius: 18px;
+    transform: translateY(-11px);
+    transition: 0.15s ease;
+    cursor: grab;
+  }
+  #display-password-length {
+    width: 30px;
+    background: transparent;
+    border: none;
+  }
+  .checkbox-container {
+    margin: 36px 0 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  /*Faire disparaitre les carrés checkbox*/
+  input[type="checkbox"] {
+    display: none;
+  }
+  /*Quand c'est checké, donner au label ce style*/
+  input[type="checkbox"]:checked + label {
+    transform: scale(1.3);
+    filter: brightness(150%);
+    background: rgba(243, 243, 2, 0.616);;
+  }
+
+  label {
+    user-select: none;
+    background: rgba(209, 204, 204, 0.233);
+    height: 60px;
+    width: 60px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.486);
+    transition: 0.2s ease;
+    cursor: pointer;
+  }
+  button {
+    font-weight: bold;
+    margin: 14px 0 20px;
+    background: rgb(223, 223, 83);
+    padding: 10px 20px;
+    border-radius: 150px;
+    border: 2px solid rgb(223, 223, 83);
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  button:hover {
+    background: rgb(243, 243, 2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.32);
+  }
+  button:active {
+    transform: scale(1.05);
+  }
+
+  /* ----------------------------------footer --------------------------------*/
+  footer {
+    background: #c06891;
+  }

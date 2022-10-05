@@ -5,8 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <!-- Navbar -->
+     <nav id="navbar">
+        <div class="nav-elements" id="nav-elements">
+            <h2>Mes projets javascript</h2>
+             <ul class="nav-links">
+                <li><a href="#password-title">Générateur de MDP</a></li>
+                
+                <li><a href="#password-maker">Générateur de MDP</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <!-- text anim -->
+        <div class="text-anim">
+            <h2>Je suis</h2>
+            <h2 id="message"></h2>
+        </div>
+        <div class="presentation">
+            <p>Bonjour à tous, je me présente je m'apelle Julie et je suis développeuse Front-end et je vous présente ici quelques projets que j'ai fait en javascript uniquement.</p>
+        </div>
+    </header>
+    <main>
+        <!-- password-maker -->            
+        <h2 id="password-title">Générateur de MDP</h2>
+
+        <div class="password" id="password">
+            <div class="password-maker">
+              <input type="text" id="password-output"
+              value="Générateur de MDP" readonly>
+              <div class="range-container">
+                  <!-- on créé un event sur l'input (oninput) / on sélectionne l'input du dessous, sa valeur / et on lui passe this.value  (Connecter 2 inputs)-->
+                  <input type="range" id="password-length" min="4" max="24" value="8" oninput="document.getElementById('display-password-length').value=this.value">
+              
+                  <input type="text" id="display-password-length" value="8" readonly>
+              </div>
+              <div class="checkbox-container">
+                  <input type="checkbox" id="lowercase" checked>
+                  <label for="lowercase">a-z</label>
+      
+                  <input type="checkbox" id="uppercase">
+                  <label for="uppercase">A-Z</label>
+      
+                  <input type="checkbox" id="numbers">
+                  <label for="numbers">0-9</label>
+      
+                  <input type="checkbox" id="symbols">
+                  <label for="symbols">!-?</label>
+              </div>
+              <button id="generateButton">Générer un mot de passe</button>
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
 </body>
 </html>
