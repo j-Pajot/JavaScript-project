@@ -159,3 +159,29 @@ start_date.addEventListener("change", bookingCalc);
 end_date.addEventListener("change", bookingCalc);
 
 bookingCalc();
+
+// --------------------- API Joke ----------------
+
+const header = document.getElementById('header');
+const content = document.getElementById('content');
+const app = document.querySelector('.app');
+
+
+
+function getJoke() {
+    fetch("https://api.blablagues.net/?rub=blagues")
+    .then((res) => res.json())
+    .then((data) => {
+        const joke = data.data.content;
+        header.textContent = joke.text_head;
+            // On test text (si c'est vrai (?)) tu affiches text (sinon (:)) tu affiches text_hidden
+            content.textContent = joke.text 
+            ? joke.text 
+            : joke.text_hidden;
+        });
+}
+
+
+getJoke();
+
+app.addEventListener('click', getJoke);

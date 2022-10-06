@@ -264,3 +264,22 @@ nav {
     font-size: 1.3rem;
     letter-spacing: 1px;
   }
+
+    /* ---------------------------------- ApI Joke --------------------------------*/
+
+    .app {
+      width: 70%;
+      min-width: 400px;
+      max-width: 800px;
+      background: rgba(209, 66, 90, 0.411);
+      border-radius: 14px;
+      padding: 20px 40px;
+      box-shadow: 3px 4px 10px 0px #a76666c2;
+      cursor: pointer;
+      transition: 0.2s;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .app:hover {
+      transform: scale(1.01);
+    }
