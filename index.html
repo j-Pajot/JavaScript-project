@@ -14,16 +14,15 @@
             <h2>Mes projets javascript</h2>
              <ul class="nav-links">
                 <li><a href="#password-title">Générateur de MDP</a></li>
-                
-                <li><a href="#password-maker">Générateur de MDP</a></li>
+                <li><a href="#calculator-title">Calcul de date</a></li>                
             </ul>
         </div>
     </nav>
     <header>
         <!-- text anim -->
         <div class="text-anim">
-            <h2>Je suis</h2>
-            <h2 id="message"></h2>
+            <h1>Je suis</h1>
+            <h1 id="message"></h1>
         </div>
         <div class="presentation">
             <p>Bonjour à tous, je me présente je m'apelle Julie et je suis développeuse Front-end et je vous présente ici quelques projets que j'ai fait en javascript uniquement.</p>
@@ -59,6 +58,21 @@
               <button id="generateButton">Générer un mot de passe</button>
             </div>
         </div>
+
+        <!-- Date calculator -->  
+        <h2 id="calculator-title">Calcul de date</h2>
+        <div class="card">
+            <h2>Book ton voyage</h2>
+            <div><span id="nightPrice">46</span> € / night</div>
+        
+            <label for="">Start</label>
+            <input id="start_date" type="date" required />
+            <label for="">End</label>
+            <input id="end_date" type="date" required />
+        
+            <h3>Total : <span id="total"></span> €</h3>
+            <button class="btn btn cyan accent-3">Validate</button>
+          </div>
     </main>
     <script src="./index.js"></script>
 </body>

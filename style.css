@@ -12,6 +12,12 @@ html {
 body {
   background: white;
 }
+
+h2 {
+  text-transform: uppercase;
+  margin: 11% 0 11%;
+
+}
 /* -------------------------------- Navbar -------------------------------------- */
 nav {
   width: 100%;
@@ -175,7 +181,7 @@ nav {
     background: rgba(243, 243, 2, 0.616);;
   }
 
-  label {
+  body .password label {
     user-select: none;
     background: rgba(209, 204, 204, 0.233);
     height: 60px;
@@ -206,7 +212,55 @@ nav {
     transform: scale(1.05);
   }
 
-  /* ----------------------------------footer --------------------------------*/
-  footer {
-    background: #c06891;
+  /* ---------------------------------- Date calculator --------------------------------*/
+  body .card {
+    text-align: center;
+    background: rgba(228, 229, 230, 0.8);
+    padding: 30px;
+    margin: 0 auto;
+    min-width: 300px;
+    width: 80%;
+    max-width: 450px;
+    border-radius: 30px;
+    box-shadow: 3px 4px 10px 0px #a76666c2;
+  }
+  
+  body .card div {
+    margin: 20px 0 40px 0;
+    font-size: 1.1rem;
+    color: black;
+  }
+  
+  body .card label {
+    display: flex;
+    flex-direction: column;
+    color: rgba(209, 66, 90, 0.411);
+  }
+  
+  body .card input {
+    background: none;
+    outline: none;
+    border: 1px solid rgba(209, 66, 90, 0.411);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    width: 210px;
+    text-align: center;
+  }
+  
+  body .card h3 {
+    margin: 20px;
+  }
+  
+  body .card button {
+    background: rgba(209, 66, 90, 0.411);
+    border-radius: 20px;
+    outline: 0;
+    border: none;
+    padding: 1rem;
+    margin: 10px 0;
+    color: white;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
   }

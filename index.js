@@ -88,3 +88,74 @@ function generatePassword() {
 }
 
 generateButton.addEventListener("click", generatePassword);
+
+  /* ---------------------------------- Date calculator --------------------------------*/
+
+  //----- 1 convertir la date du jour dans un format input---------
+
+//new Date() = Thu Oct 06 2022 10:59:46 GMT+0200 -> ne rentre pas dans un input
+//new Date().toISOString() = 2022-10-06T09:01:20.795Z -> il faut casser le T
+//new Date().toISOString().split("T") = ['2022-10-06', '09:02:39.255Z'] -> créé un tableau
+const today = new Date().toISOString().split("T")[0]; // on ne prend que le 1er élément du tableau (la date)
+start_date.value = today;
+
+// Empécher de prendre une date en arrière de celle du jour
+start_date.min = today;
+
+//----- 2 calcul de la date du lendemain------------
+let tomorrow = new Date();
+
+// getDate permet de passer au lundemain
+tomorrow.setDate(tomorrow.getDate()+ 1);
+
+// convertir au format input
+let tomorrowFormat = tomorrow.toISOString().split("T")[0];
+end_date.value = tomorrowFormat;
+
+// Empécher de prendre une date en arrière de celle du jour
+end_date.min = tomorrowFormat;
+
+// Toujours avoir le start avant le end et inversement
+start_date.addEventListener("change", (e) => {
+    let day = new Date(e.target.value);
+
+    // si la date de fin est + petite que la date de debut, tu rajoutes 1 
+    if (end_date.value < start_date.value) {
+        day.setDate(day.getDate() + 1);
+        end_date.value = day.toISOString().split("T")[0];
+    }
+});
+
+end_date.addEventListener("change", (e) => {
+    let day = new Date(e.target.value);
+
+    // si la date de début est + grande que la date de fin, tu enlèves 1 
+    if (end_date.value < start_date.value) {
+        day.setDate(day.getDate() - 1);
+        start_date.value = day.toISOString().split("T")[0];
+    }
+});
+
+//----- 3 calcul du prix selon la date () ------------
+
+// Calcul écart en jout
+const bookingCalc = () => {
+    // Math.abs = valeur absolue des 2 dates = 86400000
+    let diffTime = Math.abs(new Date(end_date.value) - new Date(start_date.value)
+    );
+
+    // Transformé en jour
+    // 1000 -> ramène en s. /  60 en min / 60 min dans 1h / et 24 on à l'écart en jour
+    let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+    
+    // Afficher jour * prix
+    total.textContent = diffDays * nightPrice.textContent;
+};
+
+
+
+// évenement pour déclancher le calcul d'écart
+start_date.addEventListener("change", bookingCalc);
+end_date.addEventListener("change", bookingCalc);
+
+bookingCalc();
