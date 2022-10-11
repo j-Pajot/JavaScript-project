@@ -185,3 +185,126 @@ function getJoke() {
 getJoke();
 
 app.addEventListener('click', getJoke);
+
+// --------------------- Quizz ----------------
+
+// class de l'objet Question
+class Question {
+    constructor(text, choices, answer) {
+      this.text = text;
+      this.choices = choices;
+      this.answer = answer;
+    }
+    // Fonction pour déterminer si l'user a bon
+    isCorrectAnswer(choice) {
+      return choice === this.answer
+    }
+  }
+  
+  const questions = [
+    new Question(
+      "Quelle méthode Javascript permet de filtrer les éléments d'un tableau",
+      ["indexOf()", "map()", "filter()", "reduce()"],
+      "filter()"
+    ),
+    new Question(
+      "Quelle méthode Javascript permet de vérifier si un élément figure dans un tableau",
+      ["isNaN()", "includes()", "findIndex()", "isOdd()"],
+      "includes()"
+    ),
+    new Question(
+      "Quelle méthode transforme du JSON en un objet Javascript ?",
+      ["JSON.parse()", "JSON.stringify()", "JSON.object()", "JSON.toJS"],
+      "JSON.parse()"
+    ),
+    new Question(
+      "Quel objet Javascript permet d'arrondir à l'entier le plus proche",
+      ["Math.ceil()", "Math.floor()", "Math.round()", "Math.random()"],
+      "Math.round()"
+    ),
+  ];
+  
+  class Quizz {
+    // donnée du quizz
+    constructor(questions) {
+      this.score = 0;
+      this.questions = questions;
+      this.currentQuestionIndex = 0; // index des questions (1ere, 2eme ...) 
+    }
+    // Méthode pour savoir sur qu'elle question on est
+    getCurrentQuestion() {
+      return this.questions[this.currentQuestionIndex];
+    }
+    guess(answer) {
+      // si la question est correct, on ajt 1 pt (isCorrectAnswer) et fait la prchaine question(currentQuestionIndex)
+      if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
+        this.score++;
+      }
+        this.currentQuestionIndex++;
+    }  
+    // Méthode pour retourner true quand l'index des questions est sup ou égale au nombre de question -> donc c'est finis
+    hasEnded() {
+      return this.currentQuestionIndex >= this.questions.length;
+    }
+  }
+  
+  // Affichage du quizz
+  const display = {
+    elementShown: function(id, text) {
+      // on pointe les id
+      let element = document.getElementById(id);
+      element.innerHTML = text;
+    },
+    question: function () {
+      this.elementShown("question", quizz.getCurrentQuestion().text);
+    },
+    choices: function() {
+      let choices = quizz.getCurrentQuestion().choices;
+      guessHandler = (id, guess) => {
+        // onClick car on est dans un objet ( pas d'eventListener)
+        // qd on click on déclanche la fonction guess puis quizzApp
+        document.getElementById(id).onclick = function () {
+          quizz.guess(guess);
+          quizzApp();
+        };
+      };
+      // Afficher choix + prise en compte du choix
+      for (let i = 0; i < choices.length; i++) {
+        this.elementShown("choice" + i, choices[i]);
+        // Guess (id des btn) + choix de l'user
+        guessHandler('guess' + i, choices[i]);
+      }
+    },
+    // Progression de l'user
+    // +1 car l'index commence à 0
+    progress: function() {
+      this.elementShown("progress", `Question ${quizz.currentQuestionIndex + 1} sur ${quizz.questions.length}`
+      );
+    },
+    endQuiz: function() {
+      let endQuizzHTML = 
+      `
+        <h1>Quizz terminé !</h1>
+        <h3>Votre score est de : ${quizz.score} / ${quizz.questions.length}</h3>
+      `
+      this.elementShown('quiz', endQuizzHTML)
+    }
+  };
+  
+  // logique du jeu
+  quizzApp = () => {
+    // si le quizz est terminé
+    if(quizz.hasEnded()) {
+      // écran de fin 
+      display.endQuiz();
+    } else {
+      // Afficher questions, choix, progression si le quizz est pas finis
+      display.question();
+      display.choices();
+      display.progress();
+    }
+  }
+  
+  // Créer le jeu
+  let quizz = new Quizz(questions);
+  quizzApp();

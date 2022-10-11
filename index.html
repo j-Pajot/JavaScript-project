@@ -15,7 +15,8 @@
              <ul class="nav-links">
                 <li><a href="#password-title">Générateur de MDP</a></li>
                 <li><a href="#calculator-title">Calcul de date</a></li>
-                <li><a href="#Joke-title">Générateur de blagues</a></li>            
+                <li><a href="#joke-title">Générateur de blagues</a></li>
+                <li><a href="#quizz-title">Quizz</a></li>             
             </ul>
         </div>
     </nav>
@@ -76,11 +77,44 @@
           </div>
 
         <!-- API Joke --> 
-        <h2 id="Joke-title">Générateur de blagues</h2>
+        <h2 id="joke-title">Générateur de blagues</h2>
         <div class="app">
             <h3 id="header"></h3>
             <p id="content"></p>
         </div>
+
+        <!--Quizz--> 
+        <h2 id="">Quizz</h2>
+        <div class="quizzContainer">
+            <div id="quiz">
+              <h1><span>Q</span>uizz <i class="far fa-question-circle"></i></h1>
+        
+              <h3 id="question"></h3>
+        
+              <h3 id="score"></h3>
+        
+              <div class="choices">
+                <button id="guess0" class="btn">
+                  <p id="choice0"></p>
+                </button>
+        
+                <button id="guess1" class="btn">
+                  <p id="choice1"></p>
+                </button>
+        
+                <button id="guess2" class="btn">
+                  <p id="choice2"></p>
+                </button>
+        
+                <button id="guess3" class="btn">
+                  <p id="choice3"></p>
+                </button>
+              </div>
+        
+              <p id="progress"></p>
+        
+            </div>
+          </div>
     </main>
     <script src="./index.js"></script>
 </body>

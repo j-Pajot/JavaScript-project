@@ -283,3 +283,63 @@ nav {
     .app:hover {
       transform: scale(1.01);
     }
+
+     /* ---------------------------------- Quizz --------------------------------*/
+     .quizzContainer {
+      margin: 0 auto;
+      background: rgba(209, 66, 90, 0.411);;
+      max-width: 800px;
+      border-radius: 14px;
+      padding: 20px 40px;
+      box-shadow: 3px 4px 10px 0px #a76666c2;
+      
+     }
+     .quizzContainer h1 {
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      font-size: 3rem;
+      text-align: center;
+    }
+    .quizzContainer h1 span,
+    .quizzContainer h1 i {
+      color: #ffa502;
+    }
+    .quizzContainer h3 {
+      color: #ffa502;
+      font-size: 1.5rem;
+    }
+    .quizzContainer .choices {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 3rem auto 3rem;
+      width: 500px;
+    }
+    .quizzContainer .choices button {
+      flex: 1 0 45%;
+      width: 200px;
+      height: 80px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      margin: 0.4rem;
+      outline: none;
+      background: #dfe4ea;
+      user-select: none;
+      font-weight: 600;
+    }
+    .quizzContainer .choices button:hover {
+      background: #ffa502;
+      transition: 0.5s;
+    }
+    .quizzContainer .choices button:active {
+      transform: scale(0.9);
+      transition: transform 0.1s;
+    }
+    .quizzContainer .choices button p {
+      font-size: 1.3rem;
+    }
+    .quizzContainer #progress {
+      font-size: 1.3rem;
+      color: #ffa502;
+    }
+    
