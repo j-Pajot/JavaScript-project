@@ -1,121 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <!-- Navbar -->
-     <nav id="navbar">
-        <div class="nav-elements" id="nav-elements">
-            <h2>Mes projets javascript</h2>
-             <ul class="nav-links">
-                <li><a href="#password-title">Générateur de MDP</a></li>
-                <li><a href="#calculator-title">Calcul de date</a></li>
-                <li><a href="#joke-title">Générateur de blagues</a></li>
-                <li><a href="#quizz-title">Quizz</a></li>             
-            </ul>
-        </div>
+    <nav id="navbar">
+      <div class="nav-elements" id="nav-elements">
+        <h2>Mes projets javascript</h2>
+        <ul class="nav-links">
+          <li><a href="#password-title">Générateur de MDP</a></li>
+          <li><a href="#calculator-title">Calcul de date</a></li>
+          <li><a href="#joke-title">Générateur de blagues</a></li>
+          <li><a href="#quizz-title">Quizz</a></li>
+        </ul>
+      </div>
     </nav>
     <header>
-        <!-- text anim -->
-        <div class="text-anim">
-            <h1>Je suis</h1>
-            <h1 id="message"></h1>
-        </div>
-        <div class="presentation">
-            <p>Bonjour à tous, je me présente je m'apelle Julie et je suis développeuse Front-end et je vous présente ici quelques projets que j'ai fait en javascript uniquement.</p>
-        </div>
+      <!-- text anim -->
+      <div class="text-anim">
+        <h1>Je suis</h1>
+        <h1 id="message"></h1>
+      </div>
+      <div class="presentation">
+        <p>
+          Bonjour à tous, je me présente je m'apelle Julie et je suis
+          développeuse Front-end et je vous présente ici quelques projets que
+          j'ai fait en javascript uniquement.
+        </p>
+      </div>
     </header>
     <main>
-        <!-- password-maker -->            
-        <h2 id="password-title">Générateur de MDP</h2>
+      <!-- password-maker -->
+      <h2 id="password-title">Générateur de MDP</h2>
 
-        <div class="password" id="password">
-            <div class="password-maker">
-              <input type="text" id="password-output"
-              value="Générateur de MDP" readonly>
-              <div class="range-container">
-                  <!-- on créé un event sur l'input (oninput) / on sélectionne l'input du dessous, sa valeur / et on lui passe this.value  (Connecter 2 inputs)-->
-                  <input type="range" id="password-length" min="4" max="24" value="8" oninput="document.getElementById('display-password-length').value=this.value">
-              
-                  <input type="text" id="display-password-length" value="8" readonly>
-              </div>
-              <div class="checkbox-container">
-                  <input type="checkbox" id="lowercase" checked>
-                  <label for="lowercase">a-z</label>
-      
-                  <input type="checkbox" id="uppercase">
-                  <label for="uppercase">A-Z</label>
-      
-                  <input type="checkbox" id="numbers">
-                  <label for="numbers">0-9</label>
-      
-                  <input type="checkbox" id="symbols">
-                  <label for="symbols">!-?</label>
-              </div>
-              <button id="generateButton">Générer un mot de passe</button>
-            </div>
+      <div class="password" id="password">
+        <div class="password-maker">
+          <input
+            type="text"
+            id="password-output"
+            value="Générateur de MDP"
+            readonly
+          />
+          <div class="range-container">
+            <!-- on créé un event sur l'input (oninput) / on sélectionne l'input du dessous, sa valeur / et on lui passe this.value  (Connecter 2 inputs)-->
+            <input
+              type="range"
+              id="password-length"
+              min="4"
+              max="24"
+              value="8"
+              oninput="document.getElementById('display-password-length').value=this.value"
+            />
+
+            <input
+              type="text"
+              id="display-password-length"
+              value="8"
+              readonly
+            />
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" id="lowercase" checked />
+            <label for="lowercase">a-z</label>
+
+            <input type="checkbox" id="uppercase" />
+            <label for="uppercase">A-Z</label>
+
+            <input type="checkbox" id="numbers" />
+            <label for="numbers">0-9</label>
+
+            <input type="checkbox" id="symbols" />
+            <label for="symbols">!-?</label>
+          </div>
+          <button id="generateButton">Générer un mot de passe</button>
         </div>
+      </div>
 
-        <!-- Date calculator -->  
-        <h2 id="calculator-title">Calcul de date</h2>
-        <div class="card">
-            <h2>Book ton voyage</h2>
-            <div><span id="nightPrice">46</span> € / night</div>
-        
-            <label for="">Start</label>
-            <input id="start_date" type="date" required />
-            <label for="">End</label>
-            <input id="end_date" type="date" required />
-        
-            <h3>Total : <span id="total"></span> €</h3>
-            <button class="btn btn cyan accent-3">Validate</button>
+      <!-- Date calculator -->
+      <h2 id="calculator-title">Calcul de date</h2>
+      <div class="card">
+        <h2>Book ton voyage</h2>
+        <div><span id="nightPrice">46</span> € / night</div>
+
+        <label for="">Start</label>
+        <input id="start_date" type="date" required />
+        <label for="">End</label>
+        <input id="end_date" type="date" required />
+
+        <h3>Total : <span id="total"></span> €</h3>
+        <button class="btn btn cyan accent-3">Validate</button>
+      </div>
+
+      <!-- API Joke -->
+      <h2 id="joke-title">Générateur de blagues</h2>
+      <div class="app">
+        <h3 id="header"></h3>
+        <p id="content"></p>
+      </div>
+
+      <!--Quizz-->
+      <h2 id="quizz-title">Quizz</h2>
+      <div class="quizzContainer">
+        <div id="quiz">
+          <h1>Quizz <i class="far fa-question-circle"></i></h1>
+
+          <h3 id="question"></h3>
+
+          <h3 id="score"></h3>
+
+          <div class="choices">
+            <button id="guess0" class="btn">
+              <p id="choice0"></p>
+            </button>
+
+            <button id="guess1" class="btn">
+              <p id="choice1"></p>
+            </button>
+
+            <button id="guess2" class="btn">
+              <p id="choice2"></p>
+            </button>
+
+            <button id="guess3" class="btn">
+              <p id="choice3"></p>
+            </button>
           </div>
 
-        <!-- API Joke --> 
-        <h2 id="joke-title">Générateur de blagues</h2>
-        <div class="app">
-            <h3 id="header"></h3>
-            <p id="content"></p>
+          <p id="progress"></p>
         </div>
-
-        <!--Quizz--> 
-        <h2 id="">Quizz</h2>
-        <div class="quizzContainer">
-            <div id="quiz">
-              <h1><span>Q</span>uizz <i class="far fa-question-circle"></i></h1>
-        
-              <h3 id="question"></h3>
-        
-              <h3 id="score"></h3>
-        
-              <div class="choices">
-                <button id="guess0" class="btn">
-                  <p id="choice0"></p>
-                </button>
-        
-                <button id="guess1" class="btn">
-                  <p id="choice1"></p>
-                </button>
-        
-                <button id="guess2" class="btn">
-                  <p id="choice2"></p>
-                </button>
-        
-                <button id="guess3" class="btn">
-                  <p id="choice3"></p>
-                </button>
-              </div>
-        
-              <p id="progress"></p>
-        
-            </div>
-          </div>
+      </div>
     </main>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>

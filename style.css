@@ -40,7 +40,7 @@ nav {
 .nav-elements h2:hover {
   color: rgba(252, 215, 5, 0.651);
 }
-.nav-elements a {
+.nav-links a {
   text-decoration: none;
 }
 .nav-elements a:visited {
@@ -292,7 +292,7 @@ nav {
       border-radius: 14px;
       padding: 20px 40px;
       box-shadow: 3px 4px 10px 0px #a76666c2;
-      
+      margin-bottom: 60px;
      }
      .quizzContainer h1 {
       margin-bottom: 3rem;
@@ -300,12 +300,11 @@ nav {
       font-size: 3rem;
       text-align: center;
     }
-    .quizzContainer h1 span,
     .quizzContainer h1 i {
-      color: #ffa502;
+      color: black;
     }
     .quizzContainer h3 {
-      color: #ffa502;
+      color: black;
       font-size: 1.5rem;
     }
     .quizzContainer .choices {
@@ -328,7 +327,7 @@ nav {
       font-weight: 600;
     }
     .quizzContainer .choices button:hover {
-      background: #ffa502;
+      background: rgb(209, 206, 30);
       transition: 0.5s;
     }
     .quizzContainer .choices button:active {
@@ -340,6 +339,6 @@ nav {
     }
     .quizzContainer #progress {
       font-size: 1.3rem;
-      color: #ffa502;
+      color: black;
     }
     
